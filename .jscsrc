@@ -1,10 +1,7 @@
 {
-  excludeFiles: [
-    "node_modules/**",
-    "bower_components/**",
-    "public/app/vendor/**"
-  ],
-  requireCurlyBraces: [
+  "excludeFiles": ["node_modules/**", "bower_components/**", "public/app/vendor/**"],
+
+  "requireCurlyBraces": [
     "if",
     "else",
     "for",
@@ -13,21 +10,23 @@
     "try",
     "catch"
   ],
-  requireOperatorBeforeLineBreak: true,
-  requireCamelCaseOrUpperCaseIdentifiers: true,
-  maximumLineLength: {
-    value: 100,
-    allowComments: true,
-    allowRegex: true
+  "requireOperatorBeforeLineBreak": true,
+  "requireCamelCaseOrUpperCaseIdentifiers": true,
+  "maximumLineLength": {
+    "value": 100,
+    "allowComments": true,
+    "allowRegex": true
   },
-  validateIndentation: 2,
-  validateQuoteMarks: "'",
-  disallowMultipleLineStrings: true,
-  disallowMixedSpacesAndTabs: true,
-  disallowTrailingWhitespace: true,
-  disallowSpaceAfterPrefixUnaryOperators: true,
-  disallowMultipleVarDecl: null,
-  requireSpaceAfterKeywords: [
+  "validateIndentation": 2,
+  "validateQuoteMarks": "'",
+
+  "disallowMultipleLineStrings": true,
+  "disallowMixedSpacesAndTabs": true,
+  "disallowTrailingWhitespace": true,
+  "disallowSpaceAfterPrefixUnaryOperators": true,
+  "disallowMultipleVarDecl": null,
+
+  "requireSpaceAfterKeywords": [
     "if",
     "else",
     "for",
@@ -38,60 +37,34 @@
     "try",
     "catch"
   ],
-  requireSpaceBeforeBinaryOperators: [
-    "=",
-    "+=",
-    "-=",
-    "*=",
-    "/=",
-    "%=",
-    "<<=",
-    ">>=",
-    ">>>=",
-    "&=",
-    "|=",
-    "^=",
-    "+=",
-    "+",
-    "-",
-    "*",
-    "/",
-    "%",
-    "<<",
-    ">>",
-    ">>>",
-    "&",
-    "|",
-    "^",
-    "&&",
-    "||",
-    "===",
-    "==",
-    ">=",
-    "<=",
-    "<",
-    ">",
-    "!=",
-    "!=="
+  "requireSpaceBeforeBinaryOperators": [
+    "=", "+=", "-=", "*=", "/=", "%=", "<<=", ">>=", ">>>=",
+    "&=", "|=", "^=", "+=",
+
+    "+", "-", "*", "/", "%", "<<", ">>", ">>>", "&",
+    "|", "^", "&&", "||", "===", "==", ">=",
+    "<=", "<", ">", "!=", "!=="
   ],
-  requireSpaceAfterBinaryOperators: true,
-  requireSpacesInConditionalExpression: true,
-  requireSpaceBeforeBlockStatements: true,
-  requireLineFeedAtFileEnd: true,
-  disallowSpacesInsideObjectBrackets: "all",
-  disallowSpacesInsideArrayBrackets: "all",
-  disallowSpacesInsideParentheses: true,
-  validateJSDoc: {
-    checkParamNames: true,
-    requireParamTypes: true
+  "requireSpaceAfterBinaryOperators": true,
+  "requireSpacesInConditionalExpression": true,
+  "requireSpaceBeforeBlockStatements": true,
+  "requireLineFeedAtFileEnd": true,
+  "disallowSpacesInsideObjectBrackets": "all",
+  "disallowSpacesInsideArrayBrackets": "all",
+  "disallowSpacesInsideParentheses": true,
+
+  "validateJSDoc": {
+    "checkParamNames": true,
+    "requireParamTypes": true
   },
-  disallowMultipleLineBreaks: true,
-  disallowCommaBeforeLineBreak: null,
-  disallowDanglingUnderscores: null,
-  disallowEmptyBlocks: null,
-  disallowTrailingComma: null,
-  requireCommaBeforeLineBreak: null,
-  requireDotNotation: null,
-  requireMultipleVarDecl: null,
-  requireParenthesesAroundIIFE: true
+
+  "disallowMultipleLineBreaks": true,
+  "disallowCommaBeforeLineBreak": null,
+  "disallowDanglingUnderscores": null,
+  "disallowEmptyBlocks": null,
+  "disallowTrailingComma": null,
+  "requireCommaBeforeLineBreak": null,
+  "requireDotNotation": null,
+  "requireMultipleVarDecl": null,
+  "requireParenthesesAroundIIFE": true
 }

@@ -30,7 +30,7 @@ module.exports = function () {
     templateCache: {
       file: 'templates.js',
       options: {
-        module: 'quickStartTemplate',
+        module: 's3DemoApp',
         standAlone: false,
         root: './app'
       }

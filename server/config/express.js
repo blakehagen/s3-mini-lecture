@@ -14,7 +14,7 @@ module.exports = () => {
   app.use(cors());
   app.use(bodyParser.urlencoded({extended: false}));
   app.use(session({
-    secret: 'thisismysecretdonttellanyone1234aaa',
+    secret: 'asdfasdfr23radsfs3rgrasdbfg2gaa121',
     resave: false,
     saveUninitialized: true
   }));
