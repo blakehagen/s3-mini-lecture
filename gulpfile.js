@@ -40,7 +40,7 @@ gulp.task('clean-build', function (done) {
 });
 
 //  CHECK ALL JS CODE WITH JSHINT & JSCS //
-gulp.task('js-check', function (done) {
+gulp.task('js-check', function () {
   log('Checking JS files with jshint and jscs...');
   return gulp.src(config.appJS)
     .pipe(gulpif(args.verbose, gprint()))
@@ -50,7 +50,7 @@ gulp.task('js-check', function (done) {
     .pipe(jshint.reporter('fail'));
 });
 
-gulp.task('template-cache', function (done) {
+gulp.task('template-cache', function () {
   log('Creating Angular $templateCache...');
   return gulp.src(config.htmlTemplates)
     .pipe(minifyHtml({empty: true}))
@@ -85,8 +85,9 @@ gulp.task('optimize-appJs', ['js-check'], function (done) {
 });
 
 // OPTIMIZE VENDOR AND APP JS --> BUILD //
-gulp.task('optimize-js', ['js-check', 'template-cache', 'optimize-appJs', 'optimize-vendorJs'], function () {
+gulp.task('optimize-js', ['js-check', 'template-cache', 'optimize-appJs', 'optimize-vendorJs'], function (done) {
   log('OPTIMIZING ALL JS...');
+  done();
 });
 
 // COMPILE LESS --> CSS, CONCAT & MINIFY --> BUILD //
@@ -111,8 +112,9 @@ gulp.task('optimize-vendor-css', function () {
 });
 
 // OPTIMIZE ALL STYLES --> BUILD //
-gulp.task('optimize-styles', ['compile-less', 'optimize-vendor-css'], function () {
+gulp.task('optimize-styles', ['compile-less', 'optimize-vendor-css'], function (done) {
   log('OPTIMIZING ALL STYLES...');
+  done();
 });
 
 // INJECT FILES TO BUILD INDEX //
