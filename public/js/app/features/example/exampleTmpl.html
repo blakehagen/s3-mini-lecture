@@ -1,15 +1,27 @@
 <section class="example">
+
   <div class="row">
     <h1>Amazon S3 Demo</h1>
   </div>
+
   <div class="row">
 
     <label class="selectImg">
       <div class="btn">
         Upload Photo
-        <input id="imageSelect" type="file" images="images" accept="image/*" fileread image="image">
+        <input id="imageSelect" type="file" accept="image/*" fileread image-count="imageCount">
       </div>
     </label>
+
+  </div>
+<pre>{{ example.image }}</pre>
+  <div class="row">
+    <div class="img-container" ng-if="example.images.length > 0">
+      <div class="img" ng-repeat="image in example.images" ng-style="{'background-image': 'url(' + image.url + ')'}">
+      </div>
+    </div>
+
+    <p ng-if="example.images.length === 0;">No images to display :(</p>
 
   </div>
 </section>

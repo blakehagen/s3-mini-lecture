@@ -47,5 +47,15 @@ module.exports = {
         res.status(200).json(img);
       }
     })
-  }
+  },
+
+  getImages: (req, res) => {
+    Image.find().lean().exec((err, allImages) => {
+      if (err) {
+        res.status(500).send(err);
+      }
+      res.status(200).json(allImages);
+    })
+  },
+
 };

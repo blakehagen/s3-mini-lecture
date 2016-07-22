@@ -28,7 +28,15 @@ angular.module('s3DemoApp').service('imageService', function ($http) {
     }).then(function (response) {
       return response.data;
     });
-    
+  };
+
+  this.getImages = function () {
+    return $http({
+      method: 'GET',
+      url: '/api/v1/getImages'
+    }).then(function (response) {
+      return response.data;
+    });
   };
 
 });

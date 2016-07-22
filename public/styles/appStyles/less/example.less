@@ -2,10 +2,17 @@
   box-sizing: border-box;
 }
 
+@main: slategrey;
+
 html, body {
   height: 100%;
   width: 100%;
   margin: 0%;
+}
+
+h1, p {
+  margin: 0;
+  color: @main;
 }
 
 .example {
@@ -24,10 +31,12 @@ html, body {
 }
 
 h1 {
-  color: slategrey;
   font-size: 40px;
   font-weight: 100;
-  margin: 0;
+}
+
+p {
+  font-weight: 100;
 }
 
 .btn {
@@ -41,6 +50,7 @@ h1 {
   height: 44px;
   cursor: pointer;
   font-weight: 100;
+  margin-top: 16px;
 }
 
 label.selectImg input[type="file"] {
@@ -48,3 +58,22 @@ label.selectImg input[type="file"] {
   top: -1000px;
   display: none;
 }
+
+.img-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: wrap;
+  height: 300px;
+  .img {
+    height: 300px;
+    width: 300px;
+    border-radius: 5px;
+    border: 1px solid @main;
+    background-position: center;
+    background-size: cover;
+    box-shadow: 1px 1px 1px @main;
+    margin: 20px;
+  }
+}
+

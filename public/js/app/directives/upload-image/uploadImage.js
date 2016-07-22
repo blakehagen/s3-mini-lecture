@@ -2,14 +2,13 @@ angular.module('s3DemoApp').directive('fileread', function ($stateParams, $state
   return {
     restrict: 'A',
     scope: {
-      email: '@',
-      image: '=',
-      clientEmail: '='
+      imageCount: '=',
     },
     link: function (scope, elem, attrs) {
       elem.bind('change', function (changeEvent) {
 
-        console.log('elem', elem);
+        console.log('scope', scope);
+        scope.imageCount = 0;
 
         var reader    = new FileReader();
         reader.onload = function (loadEvent) {
@@ -35,6 +34,7 @@ angular.module('s3DemoApp').directive('fileread', function ($stateParams, $state
 
               imageService.saveImageToDb(imgData).then(function (response) {
                 console.log('response', response);
+                scope.imageCount++;
               });
             }
           })
