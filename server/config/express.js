@@ -12,7 +12,8 @@ module.exports = () => {
 
   app.use(logger('dev'));
   app.use(cors());
-  app.use(bodyParser.urlencoded({extended: false}));
+  app.use(bodyParser.json({limit: '50mb'}));
+  app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));
   app.use(session({
     secret: 'asdfasdfr23radsfs3rgrasdbfg2gaa121',
     resave: false,

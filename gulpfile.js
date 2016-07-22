@@ -62,7 +62,7 @@ gulp.task('template-cache', function () {
 });
 
 // CONCAT, STRIP & MINIFY VENDOR JS  --> BUILD //
-gulp.task('optimize-vendorJs', ['js-check'], function (done) {
+gulp.task('optimize-vendorJs', function (done) {
   log('Concat, strip, and minify VENDOR JS...');
   gulp.src(config.appJSVendor)
     .pipe(gconcat('lib.js'))
@@ -73,19 +73,19 @@ gulp.task('optimize-vendorJs', ['js-check'], function (done) {
 });
 
 // NG-ANNOTATE, CONCAT, STRIP & MINIFY APP JS  --> BUILD //
-gulp.task('optimize-appJs', ['js-check'], function (done) {
+gulp.task('optimize-appJs', function (done) {
   log('Ng-Annotate, Concat, strip, and minify APP JS...');
   gulp.src(config.appJS)
     .pipe(ngAnnotate())
     .pipe(gconcat('app.js'))
-    .pipe(strip())
+    // .pipe(strip())
     .pipe(uglify())
     .pipe(gulp.dest(config.build + 'js'));
   done();
 });
 
 // OPTIMIZE VENDOR AND APP JS --> BUILD //
-gulp.task('optimize-js', ['js-check', 'template-cache', 'optimize-appJs', 'optimize-vendorJs'], function (done) {
+gulp.task('optimize-js', ['template-cache', 'optimize-appJs', 'optimize-vendorJs'], function (done) {
   log('OPTIMIZING ALL JS...');
   done();
 });
@@ -118,7 +118,7 @@ gulp.task('optimize-styles', ['compile-less', 'optimize-vendor-css'], function (
 });
 
 // INJECT FILES TO BUILD INDEX //
-gulp.task('inject', ['optimize-js', 'optimize-styles'], function () {
+gulp.task('inject', ['js-check', 'optimize-js', 'optimize-styles'], function () {
   log('Injecting assets into build index...');
   var templateCache = config.build + 'templates/' + config.templateCache.file;
   var jsLib         = config.build + 'js/lib.js';

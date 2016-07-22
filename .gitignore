@@ -2,3 +2,6 @@
 node_modules
 .idea
 .DS_Store
+/server/config/keys/s3Keys.js
+
+

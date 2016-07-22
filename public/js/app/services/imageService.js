@@ -1,9 +1,23 @@
 angular.module('s3DemoApp').service('imageService', function ($http) {
 
-  console.log('hello from the image service');
+  this.storeImage = function (imageData, fileName) {
 
-  this.test = function () {
-    return 'hello im a service';
+    var imageExtension = imageData.split(';')[0].split('/');
+    imageExtension     = imageExtension[imageExtension.length - 1];
+
+    var newImage = {
+      imageName: fileName,
+      imageBody: imageData,
+      imageExtension: imageExtension
+    };
+
+    return $http({
+      method: 'POST',
+      url: '/api/v1/uploadImage',
+      data: newImage
+    }).then(function (response) {
+      return response.data;
+    });
   };
 
 });
