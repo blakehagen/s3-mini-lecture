@@ -27,6 +27,16 @@ angular.module('s3DemoApp').directive('fileread', function ($stateParams, $state
 
           imageService.storeImage(fileread, fileName).then(function (result) {
             console.log('result', result);
+            if(result.status === 200){
+
+              var imgData = {
+                url: result.data.Location
+              };
+
+              imageService.saveImageToDb(imgData).then(function (response) {
+                console.log('response', response);
+              });
+            }
           })
             .catch(function (err) {
               console.error(err);

@@ -16,8 +16,19 @@ angular.module('s3DemoApp').service('imageService', function ($http) {
       url: '/api/v1/uploadImage',
       data: newImage
     }).then(function (response) {
+      return response;
+    });
+  };
+  
+  this.saveImageToDb = function (imgData) {
+    return $http({
+      method: 'POST',
+      url: '/api/v1/saveImageDb',
+      data: imgData
+    }).then(function (response) {
       return response.data;
     });
+    
   };
 
 });

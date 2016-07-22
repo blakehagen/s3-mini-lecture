@@ -4,7 +4,7 @@ const babel       = require('babel-core').transform('code');
 const express     = require('./server/config/express.js');
 const environment = process.env.NODE_ENV;
 const app         = express();
-
+require('./server/config/db.js')();
 //========//
 // ROUTES //
 //========//

@@ -1,7 +1,5 @@
 angular.module('s3DemoApp', ['ui.router']).config(function ($stateProvider, $urlRouterProvider) {
 
-  console.log('test');
-
   $stateProvider
     .state('example', {
       url: '/example',
