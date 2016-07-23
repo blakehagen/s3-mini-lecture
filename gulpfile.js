@@ -140,7 +140,7 @@ gulp.task('inject', ['js-check', 'optimize-js', 'optimize-styles'], function () 
 });
 
 // OPTIMIZE BUILD //
-gulp.task('build', ['clean-build','inject'], function () {
+gulp.task('build', ['inject'], function () {
   log('Serving up the awesomeness...');
   serve();
 });
@@ -188,7 +188,6 @@ function changeEvent(event) {
 }
 
 function startBrowserSync() {
-  console.log('browserSync Active? ', browserSync.active);
   if (args.nosync || browserSync.active) {
     return;
   }
