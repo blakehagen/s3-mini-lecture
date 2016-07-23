@@ -5,6 +5,7 @@ const s3secret = require('../../config/keys/s3Keys.js');
 const Image    = require('./s3.model');
 const moment   = require('moment');
 
+// YOU WILL NEED YOUR OWN S3 KEYS //
 AWS.config.update({
   accessKeyId: s3secret.s3keys.accessKeyId,
   secretAccessKey: s3secret.s3keys.secretAccessKey,
