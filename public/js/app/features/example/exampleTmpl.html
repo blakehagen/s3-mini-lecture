@@ -9,13 +9,13 @@
     <label class="selectImg">
       <div class="btn">
         Upload Photo
-        <input id="imageSelect" type="file" accept="image/*" fileread image-count="imageCount">
+        <input id="imageSelect" type="file" accept="image/*" fileread images="example.images">
       </div>
     </label>
-
   </div>
-<pre>{{ example.image }}</pre>
+
   <div class="row">
+
     <div class="img-container" ng-if="example.images.length > 0">
       <div class="img" ng-repeat="image in example.images" ng-style="{'background-image': 'url(' + image.url + ')'}">
       </div>
@@ -25,4 +25,3 @@
 
   </div>
 </section>
-

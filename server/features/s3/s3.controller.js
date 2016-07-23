@@ -43,6 +43,10 @@ module.exports = {
       if (err) {
         res.status(500);
       } else {
+
+
+
+
         console.log('<======= img =======> ', img);
         res.status(200).json(img);
       }
